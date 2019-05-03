@@ -1,0 +1,58 @@
+
+<head>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDSWAs2lWAGX4XPehJOjNovOtmMevC6RH8",
+    authDomain: "conquiztador-c2780.firebaseapp.com",
+    databaseURL: "https://conquiztador-c2780.firebaseio.com",
+    projectId: "conquiztador-c2780",
+    storageBucket: "conquiztador-c2780.appspot.com",
+    messagingSenderId: "1043256081448"
+  };
+  firebase.initializeApp(config);
+  
+  firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}).catch(function(error) {
+  // An error happened.
+});
+
+function callGoogleSignIn(){
+  var provider = new firebase.auth.GoogleAuthProvider();
+
+firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives a Google Access Token used access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+window.location = 'game.html';
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+     sessionStorage.setItem("loginResult", "error");
+
+
+ var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+}
+    </script>
+</head> 
+<body style="background-color: #abcdec"<br>
+<br>
+<h1 style="text-align:center; font-size: 40px;" class="head-tic animated infinite pulse">WELCOME TO</h1>
+<center><img src="conquiztador-logo.png" alt="Conquiztador Logo" align="middle" width="430px" height="290px"></center>
+<h3 style="text-align:center;" class="head-tic animated infinite pulse">Click on button to sign in with your Google account</h3>
+<br>
+<div style="text-align:center;">
+<input type="button" onclick=callGoogleSignIn() value="Google Sign In"/>
+</div>
+</body>

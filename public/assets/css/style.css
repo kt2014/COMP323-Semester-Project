@@ -1,0 +1,85 @@
+body {
+    color: #405d27;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color:#abcdec;
+}
+
+header {
+    background-color: #abcdec;
+    padding: 24px;
+    text-align: center;
+    font-size: 30px;
+    color: #405d27;
+  }
+
+h1 {
+    color: #405d27;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+h3 { 
+    color: black;
+    font-size: 14px;
+
+}
+
+h5 {
+    font:20px;
+}
+
+p {
+    font-size: 20px;
+    font-style: italic;
+    color:#d96459;
+    margin: auto;
+    margin-top: 0px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h5 {
+    font-size: 22px;
+}
+
+img {
+    width: 140px;
+    height: 100px;
+    position: absolute;
+    right:2px;
+    top:2px;
+    padding:10px 14px;
+}
+
+* {box-sizing: border-box;}
+body {
+    font-family: arial;
+}
+
+/* Specific mapael css class are below
+ * 'mapael' class is added by plugin
+*/
+
+.mapael .map {
+    position: relative;
+    background-color:#abcdec;
+    margin-bottom:10px;
+}
+
+.mapael .mapTooltip {
+    position : absolute;
+    background-color : #474c4b;
+    flood-opacity:0.70;
+    opacity: 0.70;
+    filter:alpha(opacity=70);
+    border-radius:10px;
+    padding : 10px;
+    z-index: 1000;
+    max-width: 200px;
+    display:none;
+    color:#abcdec(255, 255, 255);
+}
